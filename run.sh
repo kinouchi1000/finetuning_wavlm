@@ -1,0 +1,21 @@
+python train_wavlm.py \
+--dataset_name "reazon-research/reazonspeech" \
+--dataset_config_names "small" \
+--dataset_split_names "train" \
+--preprocessing_num_workers 8 \
+--validation_split_percentage 1 \
+--logging_steps 1000 \
+--saving_steps 1000 \
+--audio_column_name "audio" \
+--model_name_or_path "microsoft/wavlm-large" \
+--learning_rate 5e-5 \
+--num_train_epochs 100 \
+--gradient_accumulation_steps 1 \
+--lr_scheduler_type "constant_with_warmup" \
+--num_warmup_steps 1000 \
+--output_dir "./output" \
+--seed 1234 \
+--max_duration_in_seconds 30 \
+--min_duration_in_seconds 1 \
+--mask_time_prob 0.1 \
+--mask_time_length 10
