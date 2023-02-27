@@ -97,8 +97,8 @@ def parse_args():
     )
     parser.add_argument(
         "--validation_split_percentage",
-        type=int,
-        default=1,
+        type=float,
+        default=1.,
         help="Percentage of training data that should be used for validation if no validation is present in dataset.",
     )
     parser.add_argument(
@@ -482,6 +482,8 @@ def main():
             dataset_config_name,
             split=train_split_name,
             cache_dir=args.cache_dir,
+            # num_proc=8,
+            ignore_verifications=True,
         )
         datasets_splits.append(dataset_split)
 

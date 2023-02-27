@@ -1,9 +1,10 @@
 python train_wavlm.py \
 --dataset_name "reazon-research/reazonspeech" \
---dataset_config_names "small" \
+--cache_dir "/mnt/ebs5t/reazon/" \
+--dataset_config_names "all" \
 --dataset_split_names "train" \
---preprocessing_num_workers 8 \
---validation_split_percentage 1 \
+--preprocessing_num_workers 4 \
+--validation_split_percentage 0.01 \
 --logging_steps 1000 \
 --saving_steps 1000 \
 --audio_column_name "audio" \
